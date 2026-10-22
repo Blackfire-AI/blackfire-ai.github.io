@@ -20,8 +20,8 @@ Plain HTML and CSS, no build step.
 - **brigada:** the SVGs in `assets/brigada/` are copied unmodified from
   `Blackfire-AI/brigada` `docs/brand/` (commit 7fe5dc1). Follow its README: never
   set the wordmark in a typeface, leave two cells of clear space, keep it at least
-  96 px wide, and use hi-vis `#FF5A1F` only for the foreman cell. That is why
-  `/brigada/` uses no orange anywhere else.
+  96 px wide, and use hi-vis `#FF5A1F` only for the foreman cell. On the site,
+  orange appears only there and in the core of the Blackfire flame.
 - **Blackfire AI:** the flame mark (option A, "Black flame") comes from the
   "Blackfire AI Logo" design canvas, Identity v0.1. It isn't final yet. The mark
   appears inline in each page's header and in `assets/blackfire/`.

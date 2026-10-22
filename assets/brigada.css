@@ -14,10 +14,9 @@
 
 /* Endorsed lockup: typeset "by Blackfire AI" set apart from the pixel wordmark. */
 .endorse {
-  display: inline-flex; align-items: center; gap: 8px; margin-top: 4px;
+  justify-self: start; margin-top: -24px; padding: 10px 0;
   font-size: 15px; color: var(--muted); text-decoration: none;
 }
-.endorse svg { width: 10px; height: 18px; color: var(--fg); }
 .endorse b { color: var(--fg); font-weight: 700; letter-spacing: -0.03em; }
 .endorse:hover b { text-decoration: underline; }
 
