@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blackfire AI</title>
+<meta name="description" content="Blackfire AI builds developer tools for working with AI coding agents. First product: brigada, a foreman for the AI coding CLIs you already pay for.">
+<link rel="canonical" href="https://blackfire-ai.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Blackfire AI">
+<meta property="og:title" content="Blackfire AI">
+<meta property="og:description" content="Developer tools for working with AI coding agents. First product: brigada.">
+<meta property="og:url" content="https://blackfire-ai.com/">
+<meta name="theme-color" content="#F5F5F2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/blackfire/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/home.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="bf-lockup" href="/" aria-label="Blackfire AI home">
+      <svg viewBox="16 4 32 56" aria-hidden="true"><path class="flame-body" d="M32 4C36 14 48 22 48 38C48 50 41 58 32 60C23 58 16 50 16 38C16 30 20 25 24 20C24 27 27 31 30 32C29 22 30 12 32 4Z"/><path class="flame-core" d="M32 30C35 36 40 40 40 47C40 52 36.5 55 32 55C27.5 55 24 52 24 47C24 42 28 38 32 30Z"/></svg>
+      <span>blackfire <span class="ai">AI</span></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#products">Products</a>
+      <a href="https://github.com/Blackfire-AI">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="home-hero" aria-labelledby="home-title">
+  <div class="wrap">
+    <h1 id="home-title" class="bf-big">
+      <svg viewBox="16 4 32 56" aria-hidden="true"><path class="flame-body" d="M32 4C36 14 48 22 48 38C48 50 41 58 32 60C23 58 16 50 16 38C16 30 20 25 24 20C24 27 27 31 30 32C29 22 30 12 32 4Z"/><path class="flame-core" d="M32 30C35 36 40 40 40 47C40 52 36.5 55 32 55C27.5 55 24 52 24 47C24 42 28 38 32 30Z"/></svg>
+      <span class="name">blackfire <span class="ai">AI</span></span>
+    </h1>
+    <p class="lead">Developer tools for working with AI coding agents.</p>
+    <p class="sub">Local-first, open source, built on the official tools you already use and the subscriptions you already pay for.</p>
+  </div>
+</section>
+
+<section class="section" id="products" aria-labelledby="products-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label">Products</span>
+      <h2 id="products-title">What we make</h2>
+    </div>
+
+    <div class="products">
+      <article class="product" aria-labelledby="p-brigada">
+        <div class="product-info">
+          <h3 id="p-brigada" class="wordmark">
+            <picture>
+              <source media="(prefers-color-scheme: dark)" srcset="/assets/brigada/wordmark-on-dark.svg">
+              <img src="/assets/brigada/wordmark-on-light.svg" alt="brigada" width="220" height="56">
+            </picture>
+          </h3>
+          <p>Talk to the foreman. It splits your work into tasks, gives each one to the AI agent with the best measured record on your repo, checks and cross-reviews the result, and learns from every outcome.</p>
+          <ul class="meta" aria-label="Facts">
+            <li>Go</li>
+            <li>Apache-2.0</li>
+            <li>local-first</li>
+            <li>Claude Code · Codex · Kimi · opencode</li>
+          </ul>
+          <div class="cta">
+            <a class="btn btn-solid" href="/brigada/">Meet brigada</a>
+            <a class="btn" href="https://github.com/Blackfire-AI/brigada">GitHub</a>
+          </div>
+        </div>
+        <div class="term" role="group" aria-label="Install brigada">
+          <div class="term-bar"><span>shell</span><button class="copy" type="button" data-copy="home-install">Copy</button></div>
+<pre id="home-install"><span class="p">$ </span>go install github.com/Blackfire-AI/brigada/cmd/brigada@latest
+<span class="p">$ </span>brigada init
+<span class="p">$ </span>brigada attach</pre>
+        </div>
+      </article>
+
+      <div class="next">
+        <span class="label">Next</span>
+        <span>More tools are on the way. Follow <a href="https://github.com/Blackfire-AI">Blackfire-AI on GitHub</a>.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-row">
+      <span>© 2026 Blackfire AI</span>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="/brigada/">brigada</a>
+        <a href="https://github.com/Blackfire-AI">GitHub</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

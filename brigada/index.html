@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>brigada — talk to the foreman · Blackfire AI</title>
+<meta name="description" content="brigada sits above the AI coding CLIs you already pay for. A foreman splits your work into tasks, gives each to the agent with the best record on your repo, checks and cross-reviews the result, and learns from every outcome.">
+<link rel="canonical" href="https://blackfire-ai.com/brigada/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Blackfire AI">
+<meta property="og:title" content="brigada — talk to the foreman">
+<meta property="og:description" content="One foreman, every AI coding subscription you pay for. Tasks go to the agent with the best measured record on your repo, get checked, cross-reviewed and landed.">
+<meta property="og:url" content="https://blackfire-ai.com/brigada/">
+<meta name="theme-color" content="#F5F5F2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/brigada/favicon-32.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/brigada/app-icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/brigada.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="bf-lockup" href="/" aria-label="Blackfire AI home">
+      <svg viewBox="16 4 32 56" aria-hidden="true"><path class="flame-body" d="M32 4C36 14 48 22 48 38C48 50 41 58 32 60C23 58 16 50 16 38C16 30 20 25 24 20C24 27 27 31 30 32C29 22 30 12 32 4Z"/><path class="flame-core" d="M32 30C35 36 40 40 40 47C40 52 36.5 55 32 55C27.5 55 24 52 24 47C24 42 28 38 32 30Z"/></svg>
+      <span>blackfire <span class="ai">AI</span></span>
+    </a>
+    <nav class="nav" aria-label="brigada">
+      <a class="opt" href="#how">How it works</a>
+      <a class="opt" href="#gates">Gates</a>
+      <a href="#install">Install</a>
+      <a class="opt" href="https://github.com/Blackfire-AI/brigada/blob/main/docs/GUIDE.md">Guide</a>
+      <a href="https://github.com/Blackfire-AI/brigada">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="wordmark">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="/assets/brigada/wordmark-on-dark.svg">
+          <img src="/assets/brigada/wordmark-on-light.svg" alt="brigada" width="340" height="87">
+        </picture>
+        <a class="endorse" href="/">by
+          <svg viewBox="16 4 32 56" aria-hidden="true"><path class="flame-body" d="M32 4C36 14 48 22 48 38C48 50 41 58 32 60C23 58 16 50 16 38C16 30 20 25 24 20C24 27 27 31 30 32C29 22 30 12 32 4Z"/><path class="flame-core" d="M32 30C35 36 40 40 40 47C40 52 36.5 55 32 55C27.5 55 24 52 24 47C24 42 28 38 32 30Z"/></svg>
+          <b>Blackfire AI</b></a>
+      </div>
+      <h1 id="hero-title">Talk to the foreman.</h1>
+      <p class="lead">It splits the work into tasks. brigada gives each task to the agent with the best measured record on your repo among those with quota left, checks and cross-reviews the result, and learns from the outcome.</p>
+      <div class="cta">
+        <a class="btn btn-solid" href="#install">Install brigada</a>
+        <a class="btn" href="https://github.com/Blackfire-AI/brigada">View on GitHub</a>
+      </div>
+    </div>
+
+    <div class="term" role="group" aria-label="Quick start">
+      <div class="term-bar"><span>~/your-repo</span><button class="copy" type="button" data-copy="quickstart">Copy</button></div>
+<pre id="quickstart"><span class="c"># install (Go 1.27+)</span>
+<span class="p">$ </span>go install github.com/Blackfire-AI/brigada/cmd/brigada@latest
+
+<span class="c"># pick the foreman, the CLIs that run tasks, the check</span>
+<span class="p">$ </span>brigada init
+
+<span class="c"># talk to the foreman</span>
+<span class="p">$ </span>brigada attach
+
+<span class="c"># engine, jobs, plans, what needs you</span>
+<span class="p">$ </span>brigada status
+
+<span class="c"># which agent actually wins where</span>
+<span class="p">$ </span>brigada stats</pre>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="pain-title">
+  <div class="wrap two">
+    <div class="section-head">
+      <span class="label">The problem</span>
+      <h2 id="pain-title">You pay for more than one AI coding subscription. So today, you are the foreman.</h2>
+    </div>
+    <ol class="pains">
+      <li><span>You split the work into agent-sized tasks by hand.</span></li>
+      <li><span>You pick an agent per task by gut feel, and switch CLIs when one hits its 5-hour or weekly limit.</span></li>
+      <li><span>You babysit: rerun, paste errors back, decide when to give up.</span></li>
+      <li><span>You don’t know which agent is actually best on <em>your</em> repo for <em>this</em> kind of task.</span></li>
+      <li><span>Agents say “done” without running the tests, and nobody from another model family reviews the change.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="how" aria-labelledby="how-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label">How it works</span>
+      <h2 id="how-title">A crew of agents, one foreman, and a record of who does what best.</h2>
+      <p>brigada sits above the official command-line tools and uses them as workers. The foreman decides; the engine enforces, in code.</p>
+    </div>
+
+    <div class="flow" aria-label="Architecture">
+      <div class="flow-step"><span class="label">You</span><strong>Ask</strong><span>Talk in <code>brigada attach</code>, or walk away.</span></div>
+      <div class="flow-step"><span class="label">Foreman</span><strong>Plan</strong><span>An agent CLI with brigada’s tools turns the ask into a task graph.</span></div>
+      <div class="flow-step"><span class="label">Engine</span><strong>Dispatch</strong><span>Plain code, no LLM: quota, record, leases, review policy, gates.</span></div>
+      <div class="flow-step"><span class="label">Runner</span><strong>Work</strong><span>A git worktree per task, the agent CLI headless, then the check.</span></div>
+    </div>
+
+    <div class="grid grid-3">
+      <div><span class="label">01 · Foreman</span><h3>Plans with dependencies</h3><p>One of your CLIs, in a brigada-owned session. Your attached chat and the headless turns that wake on events while you’re away are one transcript.</p></div>
+      <div><span class="label">02 · Dispatcher</span><h3>Picks by measured record</h3><p>Each task goes to the agent with the best record for that kind of task on <em>your</em> repo, among agents that still have quota.</p></div>
+      <div><span class="label">03 · Check</span><h3>“Done” is not taken on trust</h3><p>Every task’s own check — tests, lint, any command — runs on the result.</p></div>
+      <div><span class="label">04 · Reviewer</span><h3>Another model family reads it</h3><p>A reviewer from a different family than the author reads every change. Fix rounds are capped.</p></div>
+      <div><span class="label">05 · Outcome</span><h3>Learns from every task</h3><p>Every outcome is recorded locally. <code>brigada stats</code> shows which agent actually wins where.</p></div>
+      <div><span class="label">06 · Landing</span><h3>Lands what passed</h3><p>Each approved task is squashed onto the target branch, your check reruns on the result, and the push follows your push gate.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="gates" aria-labelledby="gates-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label">Gates</span>
+      <h2 id="gates-title">The loop is brigada’s. The stops are yours.</h2>
+      <p>Every step the check and the cross-family review have already decided runs without you. You choose where the loop waits by writing rules into the project file. The engine enforces a gate; the foreman has no tool to pass one.</p>
+    </div>
+    <div class="gates">
+      <div class="gate"><span class="label">Gate 1</span><h3>Plan</h3><p>A plan with more tasks than you allow, a class outside your list, or a path you protect waits for you. Everything else starts on its own.</p></div>
+      <div class="gate"><span class="label">Gate 2</span><h3>Land</h3><p>Approved tasks land as soon as their dependencies have. A conflict or a failing check on the landed result is never resolved by a rule.</p></div>
+      <div class="gate"><span class="label">Gate 3</span><h3>Push</h3><p class="default">default: ask</p><p>The push waits for you until you set it to go on its own.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="clis-title">
+  <div class="wrap two">
+    <div class="section-head" style="margin-bottom:0">
+      <span class="label">Works with</span>
+      <h2 id="clis-title">The CLIs you already pay for. Unmodified.</h2>
+    </div>
+    <div class="prose">
+      <ul class="clis" aria-label="Supported CLIs">
+        <li>Claude Code</li>
+        <li>Codex</li>
+        <li>Kimi</li>
+        <li>opencode</li>
+        <li class="exp">dsh · experimental</li>
+      </ul>
+      <p>brigada drives the vendors’ <strong>unmodified</strong> command-line tools, each signed in with <strong>your own account</strong>. It never rotates or pools credentials. See <a href="https://github.com/Blackfire-AI/brigada/blob/main/docs/TERMS.md">TERMS</a>.</p>
+      <p>Reviews need a model family other than the author’s, so offer review-capable agents from at least two families.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="local-title">
+  <div class="wrap two">
+    <div class="section-head" style="margin-bottom:0">
+      <span class="label">Local-first</span>
+      <h2 id="local-title">One Go binary and a SQLite store, on your machine.</h2>
+    </div>
+    <div class="prose">
+      <p>The engine starts on demand and keeps going after the conversation ends, because tasks run for many minutes. No state lives only in the foreman’s session: the plan is also written into the repo, so a session can end, crash or resume without losing work.</p>
+      <div class="notice" role="note">
+        <span class="label">Before you start</span>
+        <p>Workers run in git worktrees, not containers, and a worker can do what your user can do. Checks run with your credentials: don’t point brigada at a repository you don’t trust.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="install" aria-labelledby="install-title">
+  <div class="wrap two">
+    <div class="section-head" style="margin-bottom:0">
+      <span class="label">Install</span>
+      <h2 id="install-title">Three commands to your first plan.</h2>
+      <p>You need:</p>
+      <ul class="reqs">
+        <li>Go 1.27 or newer, and <code>git</code></li>
+        <li>a repository with an <code>origin</code> remote</li>
+        <li>signed-in agent CLIs on <code>PATH</code>, from at least two model families</li>
+      </ul>
+    </div>
+
+    <div class="steps">
+      <div class="step"><div>
+        <h3>Install the binary</h3>
+        <div class="term">
+          <div class="term-bar"><span>shell</span><button class="copy" type="button" data-copy="s1">Copy</button></div>
+<pre id="s1">go install github.com/Blackfire-AI/brigada/cmd/brigada@latest</pre>
+        </div>
+        <p>Make sure <code>$(go env GOPATH)/bin</code> is on your <code>PATH</code>.</p>
+      </div></div>
+
+      <div class="step"><div>
+        <h3>Run <code>brigada init</code> in your repo</h3>
+        <div class="term">
+          <div class="term-bar"><span>shell</span><button class="copy" type="button" data-copy="s2">Copy</button></div>
+<pre id="s2">brigada init</pre>
+        </div>
+        <p>Pick the foreman model and effort, the CLIs that may run tasks, tasks at once, and the check. Init shows every file it would change; nothing is written until you confirm. <code>--probe</code> writes nothing.</p>
+      </div></div>
+
+      <div class="step"><div>
+        <h3>Talk to the foreman</h3>
+        <div class="term">
+          <div class="term-bar"><span>shell</span><button class="copy" type="button" data-copy="s3">Copy</button></div>
+<pre id="s3">brigada attach</pre>
+        </div>
+        <p>Then <code>brigada status</code>, <code>brigada diff &lt;task&gt;</code> and <code>brigada land &lt;task&gt;</code>. The <a href="https://github.com/Blackfire-AI/brigada/blob/main/docs/GUIDE.md">guide</a> covers the rest.</p>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-row">
+      <div class="footer-mark">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="/assets/brigada/wordmark-on-dark.svg">
+          <img src="/assets/brigada/wordmark-on-light.svg" alt="brigada" width="120" height="31">
+        </picture>
+        <span>a <a href="/">Blackfire AI</a> product · Apache-2.0</span>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="https://github.com/Blackfire-AI/brigada">GitHub</a>
+        <a href="https://github.com/Blackfire-AI/brigada/blob/main/docs/GUIDE.md">Guide</a>
+        <a href="https://github.com/Blackfire-AI/brigada/blob/main/CHANGELOG.md">Changelog</a>
+        <a href="https://github.com/Blackfire-AI/brigada/blob/main/SECURITY.md">Security</a>
+        <a href="https://github.com/Blackfire-AI/brigada/blob/main/docs/TERMS.md">Terms</a>
+      </nav>
+    </div>
+    <p class="fine">“brigada” and the pixel wordmark are trademarks of Blackfire AI. Claude Code, Codex, Kimi and opencode are the marks of their owners; brigada drives their official CLIs and is not affiliated with or endorsed by them.</p>
+  </div>
+</footer>
+
+<script src="/assets/site.js" defer></script>
+</body>
+</html>
