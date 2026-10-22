@@ -131,7 +131,7 @@
     <div class="gates">
       <div class="gate"><span class="label">Gate 1</span><h3>Plan</h3><p>A plan with more tasks than you allow, a class outside your list, or a path you protect waits for you. Everything else starts on its own.</p></div>
       <div class="gate"><span class="label">Gate 2</span><h3>Land</h3><p>Approved tasks land as soon as their dependencies have. A conflict or a failing check on the landed result is never resolved by a rule.</p></div>
-      <div class="gate"><span class="label">Gate 3</span><h3>Push</h3><p class="default">default: ask</p><p>The push waits for you until you set it to go on its own.</p></div>
+      <div class="gate"><span class="label">Gate 3</span><h3>Push</h3><p class="default">default: auto</p><p>A landed task is pushed at once. Set it to <code>ask</code> to hold pushes until you approve, or <code>never</code> to push yourself.</p></div>
     </div>
   </div>
 </section>
@@ -150,7 +150,7 @@
         <li>opencode</li>
         <li class="exp">dsh · experimental</li>
       </ul>
-      <p>brigada drives the vendors’ <strong>unmodified</strong> command-line tools, each signed in with <strong>your own account</strong>. It never rotates or pools credentials. See <a href="https://github.com/Blackfire-AI/brigada/blob/main/docs/TERMS.md">TERMS</a>.</p>
+      <p>brigada drives the vendors’ <strong>unmodified</strong> command-line tools, each signed in with <strong>your own account</strong>, one login per account. It never stores your tokens, and logins are never shared between people. See <a href="https://github.com/Blackfire-AI/brigada/blob/main/docs/TERMS.md">TERMS</a>.</p>
       <p>Reviews need a model family other than the author’s, so offer review-capable agents from at least two families.</p>
     </div>
   </div>
@@ -166,7 +166,7 @@
       <p><code>brigada init</code> starts the engine and a detached runner; <code>brigada start</code> brings them back after a reboot. Tasks keep running after the conversation ends, and the plan is also written into the repo, so a foreman session can end or crash without losing work.</p>
       <div class="notice" role="note">
         <span class="label">Before you start</span>
-        <p>Workers run in git worktrees, not containers, and a worker can do what your user can do. Checks run with your credentials: don’t point brigada at a repository you don’t trust.</p>
+        <p>Workers run in git worktrees, not containers, each under its CLI’s own permission scope. They inherit your environment, so a check or a test run can still reach your credentials and network: don’t point brigada at a repository you don’t trust.</p>
       </div>
     </div>
   </div>
