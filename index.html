@@ -14,6 +14,7 @@
 <meta name="theme-color" content="#F5F5F2" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="/assets/blackfire/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/blackfire/app-icon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap">
@@ -41,8 +42,10 @@
 <section class="home-hero" aria-labelledby="home-title">
   <div class="wrap">
     <h1 id="home-title" class="bf-big">
-      <svg viewBox="16 4 32 56" aria-hidden="true"><path class="flame-body" d="M32 4C36 14 48 22 48 38C48 50 41 58 32 60C23 58 16 50 16 38C16 30 20 25 24 20C24 27 27 31 30 32C29 22 30 12 32 4Z"/><path class="flame-core" d="M32 30C35 36 40 40 40 47C40 52 36.5 55 32 55C27.5 55 24 52 24 47C24 42 28 38 32 30Z"/></svg>
-      <span class="name">blackfire <span class="ai">AI</span></span>
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="/assets/blackfire/lockup-on-dark.svg">
+        <img src="/assets/blackfire/lockup-on-light.svg" alt="Blackfire AI" width="400" height="120">
+      </picture>
     </h1>
     <p class="lead">Developer tools for working with AI coding agents.</p>
     <p class="sub">Local-first, open source, built on the official tools you already use and the subscriptions you already pay for.</p>
@@ -61,8 +64,8 @@
         <div class="product-info">
           <h3 id="p-brigada" class="wordmark">
             <picture>
-              <source media="(prefers-color-scheme: dark)" srcset="/assets/brigada/wordmark-on-dark.svg">
-              <img src="/assets/brigada/wordmark-on-light.svg" alt="brigada" width="220" height="56">
+              <source media="(prefers-color-scheme: dark)" srcset="/assets/brigada/lockup-on-dark.svg">
+              <img src="/assets/brigada/lockup-on-light.svg" alt="brigada by Blackfire AI" width="362" height="120">
             </picture>
           </h3>
           <p>Talk to the foreman. It splits your work into tasks, gives each one to the AI agent with the best measured record on your repo, checks and cross-reviews the result, and learns from every outcome.</p>

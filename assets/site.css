@@ -1,6 +1,5 @@
-/* Blackfire AI site. Palette from the brigada brand tokens (docs/brand/tokens.json
-   in Blackfire-AI/brigada): Ink, Paper, Hi-vis, Steel. Hi-vis appears only in the
-   brigada foreman cell and the core of the Blackfire flame; never as an accent. */
+/* Blackfire AI site. Palette: Ink, Paper, Hi-vis, Steel. Hi-vis appears only in
+   the core of the Blackfire flame; never as an accent. */
 
 :root {
   --ink: #111111;

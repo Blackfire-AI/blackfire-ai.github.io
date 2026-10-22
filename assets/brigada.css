@@ -1,4 +1,4 @@
-/* /brigada/ page. The wordmark SVGs are the brand files, unmodified. */
+/* /brigada/ page. The lockup SVGs come from assets/brigada/ (flame + Space Grotesk, text as paths). */
 
 .hero { padding: 72px 0 88px; }
 .hero .wrap { display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center; }
@@ -7,18 +7,11 @@
 .hero-copy { display: grid; gap: 24px; min-width: 0; }
 .hero-copy .lead { font-size: 20px; color: var(--muted); max-width: 560px; }
 
-/* Clear space around the wordmark: two cells on every side (README, Usage). */
-.wordmark { padding: 22px 0; }
-.wordmark img { width: 340px; height: auto; }
-@media (max-width: 420px) { .wordmark img { width: 260px; } }
+/* Clear space around the lockup: at least the flame core's height on every side. */
+.wordmark { padding: 16px 0; }
+.wordmark img { width: 360px; height: auto; }
+@media (max-width: 420px) { .wordmark img { width: 270px; } }
 
-/* Endorsed lockup: typeset "by Blackfire AI" set apart from the pixel wordmark. */
-.endorse {
-  justify-self: start; margin-top: -24px; padding: 10px 0;
-  font-size: 15px; color: var(--muted); text-decoration: none;
-}
-.endorse b { color: var(--fg); font-weight: 700; letter-spacing: -0.03em; }
-.endorse:hover b { text-decoration: underline; }
 
 .cta { display: flex; flex-wrap: wrap; gap: 12px; }
 
@@ -87,7 +80,7 @@
 
 .reqs { margin: 0; padding-left: 20px; color: var(--muted); display: grid; gap: 6px; }
 
-.footer-mark img { width: 120px; height: auto; margin: 10px 0; }
+.footer-mark img { width: 150px; height: auto; margin: 10px 0; }
 
 @media (max-width: 600px) {
   .pains li, .step { grid-template-columns: 32px 1fr; }

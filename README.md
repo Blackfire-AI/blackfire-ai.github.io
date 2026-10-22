@@ -17,15 +17,25 @@ Plain HTML and CSS, no build step.
 
 ## Brand
 
-- **brigada:** the SVGs in `assets/brigada/` are copied unmodified from
-  `Blackfire-AI/brigada` `docs/brand/` (commit 7fe5dc1). Follow its README: never
-  set the wordmark in a typeface, leave two cells of clear space, keep it at least
-  96 px wide, and use hi-vis `#FF5A1F` only for the foreman cell. On the site,
-  orange appears only there and in the core of the Blackfire flame.
-- **Blackfire AI:** the flame mark (option A, "Black flame") comes from the
-  "Blackfire AI Logo" design canvas, Identity v0.1. It isn't final yet. The mark
-  appears inline in each page's header and in `assets/blackfire/`.
-- **Type:** Space Grotesk and JetBrains Mono, from Google Fonts.
+One mark for the company and every product: the Blackfire flame (ink body,
+hi-vis `#FF5A1F` core). Products don't get their own symbol; they differ by name
+and descriptor only.
+
+| File | Use |
+|------|-----|
+| `assets/blackfire/lockup-on-{light,dark}.svg` | Blackfire AI: flame + **blackfire** / AI INFRASTRUCTURE |
+| `assets/brigada/lockup-on-{light,dark}.svg` | brigada: flame + **brigada** / BY BLACKFIRE AI |
+| `assets/blackfire/flame.svg` | the mark alone |
+| `assets/blackfire/favicon.svg`, `app-icon.svg` | ink tile, paper flame, hi-vis core (all pages) |
+
+- **Type:** name in Space Grotesk 700, lower case, tracking −0.035em; descriptor in
+  Space Grotesk 500, caps, tracking +0.42em, Steel `#555555` (`#A3A7AE` on dark).
+  The lockup SVGs have text converted to paths, so they render without the font.
+- **Colour:** hi-vis only in the flame core. Lockups come in an on-light (ink) and an
+  on-dark (paper) version; pick with `<picture>` and `prefers-color-scheme`.
+- **New product:** copy a lockup, change the name, keep "BY BLACKFIRE AI".
+- The old brigada pixel files (`assets/brigada/wordmark-*`, `mark-*`, `favicon-*`,
+  `app-icon.svg`) are no longer used by the site.
 
 ## Local preview
 
