@@ -28,6 +28,6 @@ tasks:
     base: ""
     tier: light
     effort: low
-    state: running
-    branch: "brigada/task-168"
+    state: reviewing
+    branch: "brigada/task-168-r1"
     rounds: 0
