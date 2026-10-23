@@ -5,9 +5,9 @@
 plan: 46
 title: "brigada page: copy matches new README quickstart"
 repo: "github.com/Blackfire-AI/blackfire-ai.github.io"
-state: active
+state: done
 created: 2026-10-23T11:30:34.069304Z
-updated: 2026-10-23T11:34:20.354469Z
+updated: 2026-10-23T11:41:46.453902Z
 # §6.1: the graph. A task waits (pending) until every task named in deps is
 # done; its work starts from the branch of base, one of deps — the continued
 # dep when base is empty and continue is set, else the default branch; merge a
