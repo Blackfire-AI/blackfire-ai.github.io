@@ -28,6 +28,6 @@ tasks:
     base: ""
     tier: light
     effort: low
-    state: done
+    state: needs_foreman
     branch: "brigada/task-168"
     rounds: 0
