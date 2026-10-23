@@ -67,11 +67,16 @@
 <span class="c"># pick the foreman, the CLIs that run tasks, the check</span>
 <span class="p">$ </span>brigada init
 
-<span class="c"># talk to the foreman</span>
+<span class="c"># open your coding agent in the repo, have it read .brigada/operator.md, then say: ask brigada to fix #12</span>
+
+<span class="c"># or talk to the foreman yourself</span>
 <span class="p">$ </span>brigada attach
 
 <span class="c"># engine, jobs, plans, what needs you</span>
 <span class="p">$ </span>brigada status
+
+<span class="c"># your live view of agents, jobs, queue, plans and events</span>
+<span class="p">$ </span>brigada top
 
 <span class="c"># which agent actually wins where</span>
 <span class="p">$ </span>brigada stats</pre>
@@ -104,7 +109,7 @@
     </div>
 
     <div class="flow" aria-label="Architecture">
-      <div class="flow-step"><span class="label">You</span><strong>Ask</strong><span>Talk in <code>brigada attach</code>, or walk away.</span></div>
+      <div class="flow-step"><span class="label">You</span><strong>Ask</strong><span>Tell your coding agent (the operator, which approves nothing), or talk in <code>brigada attach</code>.</span></div>
       <div class="flow-step"><span class="label">Foreman</span><strong>Plan</strong><span>An agent CLI with brigada’s tools turns the ask into a task graph.</span></div>
       <div class="flow-step"><span class="label">Engine</span><strong>Dispatch</strong><span>Plain code, no LLM: quota, record, leases, review policy, gates.</span></div>
       <div class="flow-step"><span class="label">Runner</span><strong>Work</strong><span>A git worktree per task, the agent CLI headless, then the check.</span></div>
@@ -208,9 +213,9 @@
         <h3>Talk to the foreman</h3>
         <div class="term">
           <div class="term-bar"><span>shell</span><button class="copy" type="button" data-copy="s3">Copy</button></div>
-<pre id="s3">brigada attach</pre>
+<pre id="s3">Read .brigada/operator.md, then ask brigada to fix #12.</pre>
         </div>
-        <p>Then <code>brigada status</code>, <code>brigada diff &lt;task&gt;</code> and <code>brigada land &lt;task&gt;</code>. The <a href="https://github.com/Blackfire-AI/brigada/blob/main/docs/GUIDE.md">guide</a> covers the rest.</p>
+        <p>Open your coding agent in the repository and paste that. To talk to the foreman yourself, run <code>brigada attach</code>. Watch with <code>brigada top</code> (your live view of agents, jobs, queue, plans and events) or <code>brigada status</code>; review with <code>brigada diff &lt;task&gt;</code> and <code>brigada land &lt;task&gt;</code>. The <a href="https://github.com/Blackfire-AI/brigada/blob/main/docs/GUIDE.md">guide</a> covers the rest.</p>
       </div></div>
     </div>
   </div>
