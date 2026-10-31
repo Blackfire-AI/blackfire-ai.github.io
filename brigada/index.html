@@ -61,8 +61,8 @@
 
     <div class="term" role="group" aria-label="Quick start">
       <div class="term-bar"><span>~/your-repo</span><button class="copy" type="button" data-copy="quickstart">Copy</button></div>
-<pre id="quickstart"><span class="c"># install (Go 1.27+)</span>
-<span class="p">$ </span>go install github.com/Blackfire-AI/brigada/cmd/brigada@latest
+<pre id="quickstart"><span class="c"># install (Homebrew; or install.sh, or go install with Go 1.27+)</span>
+<span class="p">$ </span>brew install blackfire-ai/tap/brigada
 
 <span class="c"># pick the foreman, the CLIs that run tasks, the check</span>
 <span class="p">$ </span>brigada init
@@ -110,7 +110,7 @@
 
     <div class="flow" aria-label="Architecture">
       <div class="flow-step"><span class="label">You</span><strong>Ask</strong><span>Tell your coding agent (the operator, which approves nothing), or talk in <code>brigada attach</code>.</span></div>
-      <div class="flow-step"><span class="label">Foreman</span><strong>Plan</strong><span>An agent CLI with brigada’s tools turns the ask into a task graph.</span></div>
+      <div class="flow-step"><span class="label">Foreman</span><strong>Plan</strong><span>claude, codex or opencode, with brigada’s tools, turns the ask into a task graph.</span></div>
       <div class="flow-step"><span class="label">Engine</span><strong>Dispatch</strong><span>Plain code, no LLM: quota, record, leases, review policy, gates.</span></div>
       <div class="flow-step"><span class="label">Runner</span><strong>Work</strong><span>A git worktree per task, the agent CLI headless, then the check.</span></div>
     </div>
@@ -119,7 +119,7 @@
       <div><span class="label">01 · Foreman</span><h3>Plans with dependencies</h3><p>One of your CLIs, in a brigada-owned session. Your attached chat and the headless turns that wake on events while you’re away are one transcript.</p></div>
       <div><span class="label">02 · Dispatcher</span><h3>Picks by measured record</h3><p>Each task goes to the agent with the best record for that kind of task on <em>your</em> repo, among agents that still have quota.</p></div>
       <div><span class="label">03 · Check</span><h3>“Done” is not taken on trust</h3><p>Every task’s own check — tests, lint, any command — runs on the result.</p></div>
-      <div><span class="label">04 · Reviewer</span><h3>Another model family reads it</h3><p>A reviewer from a different family than the author reads every change. Fix rounds are capped.</p></div>
+      <div><span class="label">04 · Reviewer</span><h3>Another model family reads it</h3><p>A reviewer — from a different family than the author whenever one is available — reads every change. Fix rounds are capped.</p></div>
       <div><span class="label">05 · Outcome</span><h3>Learns from every task</h3><p>Every outcome is recorded locally. <code>brigada stats</code> shows which agent actually wins where.</p></div>
       <div><span class="label">06 · Landing</span><h3>Lands what passed</h3><p>Each approved task is squashed onto the target branch, your check reruns on the result, and the push follows your push gate.</p></div>
     </div>
@@ -131,7 +131,7 @@
     <div class="section-head">
       <span class="label">Gates</span>
       <h2 id="gates-title">The loop is brigada’s. The stops are yours.</h2>
-      <p>Every step the check and the cross-family review have already decided runs without you. You choose where the loop waits by writing rules into the project file. The engine enforces a gate; the foreman has no tool to pass one.</p>
+      <p>Every step the check and the review have already decided runs without you. You choose where the loop waits by writing rules into the project file. The engine enforces a gate; the foreman has no tool to pass one.</p>
     </div>
     <div class="gates">
       <div class="gate"><span class="label">Gate 1</span><h3>Plan</h3><p>A plan with more tasks than you allow, a class outside your list, or a path you protect waits for you. Everything else starts on its own.</p></div>
@@ -155,8 +155,8 @@
         <li>opencode</li>
         <li class="exp">dsh · experimental</li>
       </ul>
-      <p>brigada drives the vendors’ <strong>unmodified</strong> command-line tools, each signed in with <strong>your own account</strong>, one login per account. It never stores your tokens, and logins are never shared between people. See <a href="https://github.com/Blackfire-AI/brigada/blob/main/docs/TERMS.md">TERMS</a>.</p>
-      <p>Reviews need a model family other than the author’s, so offer review-capable agents from at least two families.</p>
+      <p>brigada drives the vendors’ <strong>unmodified</strong> command-line tools, each signed in with <strong>your own account</strong>, one login per account. It stores none of your vendor credentials — each CLI keeps its own login, logins are never shared between people, and brigada’s own session tokens never leave its local state directory. See <a href="https://github.com/Blackfire-AI/brigada/blob/main/docs/TERMS.md">TERMS</a>.</p>
+      <p>Reviews prefer a model family other than the author’s, so offer review-capable agents from at least two families to keep every review cross-family.</p>
     </div>
   </div>
 </section>
@@ -184,9 +184,9 @@
       <h2 id="install-title">Three commands to your first plan.</h2>
       <p>You need:</p>
       <ul class="reqs">
-        <li>Go 1.27 or newer, and <code>git</code></li>
-        <li>a repository with an <code>origin</code> remote</li>
-        <li>signed-in agent CLIs on <code>PATH</code>, from at least two model families</li>
+        <li><code>git</code>, on macOS or Linux (amd64 or arm64)</li>
+        <li>a repository with a git remote</li>
+        <li>signed-in agent CLIs on <code>PATH</code> — two model families or more keeps every review cross-family</li>
       </ul>
     </div>
 
@@ -195,9 +195,9 @@
         <h3>Install the binary</h3>
         <div class="term">
           <div class="term-bar"><span>shell</span><button class="copy" type="button" data-copy="s1">Copy</button></div>
-<pre id="s1">go install github.com/Blackfire-AI/brigada/cmd/brigada@latest</pre>
+<pre id="s1">brew install blackfire-ai/tap/brigada</pre>
         </div>
-        <p>Make sure <code>$(go env GOPATH)/bin</code> is on your <code>PATH</code>.</p>
+        <p>No Go toolchain needed. Without Homebrew: <code>curl -fsSL https://raw.githubusercontent.com/Blackfire-AI/brigada/main/install.sh | sh</code> (verified against <code>SHA256SUMS</code>, installs into <code>~/.local/bin</code>), or with Go 1.27+: <code>go install github.com/Blackfire-AI/brigada/cmd/brigada@latest</code>, with <code>$(go env GOPATH)/bin</code> on your <code>PATH</code>. Prebuilt binaries are on the <a href="https://github.com/Blackfire-AI/brigada/releases">releases page</a>.</p>
       </div></div>
 
       <div class="step"><div>
