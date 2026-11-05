@@ -108,6 +108,11 @@
       <p>brigada sits above the official command-line tools and uses them as workers. The foreman decides; the engine enforces, in code.</p>
     </div>
 
+    <figure class="demo">
+      <img src="/assets/brigada/demo-run.gif" width="759" height="451" loading="lazy" alt="Terminal recording: brigada ask starts a plan of two tasks, claude/sonnet works on them, glm-5.3 reviews them, both land, and git log shows the task trailers.">
+      <figcaption>Real run, cut from 35 minutes to its state changes.</figcaption>
+    </figure>
+
     <div class="flow" aria-label="Architecture">
       <div class="flow-step"><span class="label">You</span><strong>Ask</strong><span>Tell your coding agent (the operator, which approves nothing), or talk in <code>brigada attach</code>.</span></div>
       <div class="flow-step"><span class="label">Foreman</span><strong>Plan</strong><span>claude, codex or opencode, with brigada’s tools, turns the ask into a task graph.</span></div>

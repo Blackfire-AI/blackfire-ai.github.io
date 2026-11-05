@@ -86,3 +86,7 @@
   .pains li, .step { grid-template-columns: 32px 1fr; }
   .section { padding: 64px 0; }
 }
+
+.demo { margin: 0 0 44px; max-width: 759px; }
+.demo img { width: 100%; height: auto; border: 1px solid var(--line); }
+.demo figcaption { margin-top: 10px; color: var(--muted); font-size: 15px; }
