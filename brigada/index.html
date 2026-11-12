@@ -115,7 +115,7 @@
 
     <div class="flow" aria-label="Architecture">
       <div class="flow-step"><span class="label">You</span><strong>Ask</strong><span>Tell your coding agent (the operator, which approves nothing), or talk in <code>brigada attach</code>.</span></div>
-      <div class="flow-step"><span class="label">Foreman</span><strong>Plan</strong><span>claude, codex or opencode, with brigada’s tools, turns the ask into a task graph.</span></div>
+      <div class="flow-step"><span class="label">Foreman</span><strong>Plan</strong><span>claude, codex, opencode or qwen-code, with brigada’s tools, turns the ask into a task graph.</span></div>
       <div class="flow-step"><span class="label">Engine</span><strong>Dispatch</strong><span>Plain code, no LLM: quota, record, leases, review policy, gates.</span></div>
       <div class="flow-step"><span class="label">Runner</span><strong>Work</strong><span>A git worktree per task, the agent CLI headless, then the check.</span></div>
     </div>
@@ -159,6 +159,7 @@
         <li>Kimi</li>
         <li>opencode</li>
         <li class="exp">dsh · experimental</li>
+        <li class="exp">Qwen Code · experimental</li>
       </ul>
       <p>brigada drives the vendors’ <strong>unmodified</strong> command-line tools, each signed in with <strong>your own account</strong>, one login per account. It stores none of your vendor credentials — each CLI keeps its own login, logins are never shared between people, and brigada’s own session tokens never leave its local state directory. See <a href="https://github.com/Blackfire-AI/brigada/blob/main/docs/TERMS.md">TERMS</a>.</p>
       <p>Reviews prefer a model family other than the author’s, so offer review-capable agents from at least two families to keep every review cross-family.</p>
@@ -246,7 +247,7 @@
         <a href="https://github.com/Blackfire-AI/brigada/blob/main/docs/TERMS.md">Terms</a>
       </nav>
     </div>
-    <p class="fine">“Blackfire AI”, “brigada” and the flame mark are trademarks of Blackfire AI. Claude Code, Codex, Kimi and opencode are the marks of their owners; brigada drives their official CLIs and is not affiliated with or endorsed by them.</p>
+    <p class="fine">“Blackfire AI”, “brigada” and the flame mark are trademarks of Blackfire AI. Claude Code, Codex, Kimi, opencode and Qwen Code are the marks of their owners; brigada drives their official CLIs and is not affiliated with or endorsed by them.</p>
   </div>
 </footer>
 
