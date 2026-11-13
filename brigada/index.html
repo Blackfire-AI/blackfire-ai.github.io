@@ -115,7 +115,7 @@
 
     <div class="flow" aria-label="Architecture">
       <div class="flow-step"><span class="label">You</span><strong>Ask</strong><span>Tell your coding agent (the operator, which approves nothing), or talk in <code>brigada attach</code>.</span></div>
-      <div class="flow-step"><span class="label">Foreman</span><strong>Plan</strong><span>claude, codex, opencode or qwen-code, with brigada’s tools, turns the ask into a task graph.</span></div>
+      <div class="flow-step"><span class="label">Foreman</span><strong>Plan</strong><span>claude, codex, opencode or qwen-code (experimental), with brigada’s tools, turns the ask into a task graph.</span></div>
       <div class="flow-step"><span class="label">Engine</span><strong>Dispatch</strong><span>Plain code, no LLM: quota, record, leases, review policy, gates.</span></div>
       <div class="flow-step"><span class="label">Runner</span><strong>Work</strong><span>A git worktree per task, the agent CLI headless, then the check.</span></div>
     </div>
@@ -136,11 +136,11 @@
     <div class="section-head">
       <span class="label">Gates</span>
       <h2 id="gates-title">The loop is brigada’s. The stops are yours.</h2>
-      <p>Every step the check and the review have already decided runs without you. You choose where the loop waits by writing rules into the project file. The engine enforces a gate; the foreman has no tool to pass one.</p>
+      <p>Every step the check and the review have already decided runs without you. You choose where the loop waits by writing rules into the project file. The foreman has no tool to pass a gate; approving is yours.</p>
     </div>
     <div class="gates">
       <div class="gate"><span class="label">Gate 1</span><h3>Plan</h3><p>A plan with more tasks than you allow, a class outside your list, or a path you protect waits for you. Everything else starts on its own.</p></div>
-      <div class="gate"><span class="label">Gate 2</span><h3>Land</h3><p>Approved tasks land as soon as their dependencies have. A conflict or a failing check on the landed result is never resolved by a rule.</p></div>
+      <div class="gate"><span class="label">Gate 2</span><h3>Land</h3><p>Approved tasks land as soon as their dependencies have, unless a land rule holds them for you. A conflict or a failing check on the landed result is never resolved by a rule.</p></div>
       <div class="gate"><span class="label">Gate 3</span><h3>Push</h3><p class="default">default: auto</p><p>A landed task is pushed at once. Set it to <code>ask</code> to hold pushes until you approve, or <code>never</code> to push yourself.</p></div>
     </div>
   </div>
@@ -158,10 +158,10 @@
         <li>Codex</li>
         <li>Kimi</li>
         <li>opencode</li>
-        <li class="exp">dsh · experimental</li>
+        <li class="exp">dsh · experimental · API key</li>
         <li class="exp">Qwen Code · experimental</li>
       </ul>
-      <p>brigada drives the vendors’ <strong>unmodified</strong> command-line tools, each signed in with <strong>your own account</strong>, one login per account. It stores none of your vendor credentials — each CLI keeps its own login, logins are never shared between people, and brigada’s own session tokens never leave its local state directory. See <a href="https://github.com/Blackfire-AI/brigada/blob/main/docs/TERMS.md">TERMS</a>.</p>
+      <p>brigada drives the vendors’ <strong>unmodified</strong> command-line tools, each signed in with <strong>your own account</strong> (dsh with your own API key), one login per account. It stores none of your vendor credentials: each CLI keeps its own login, and you don’t share logins between people. See <a href="https://github.com/Blackfire-AI/brigada/blob/main/docs/TERMS.md">TERMS</a>.</p>
       <p>Reviews prefer a model family other than the author’s, so offer review-capable agents from at least two families to keep every review cross-family.</p>
     </div>
   </div>
@@ -174,10 +174,10 @@
       <h2 id="local-title">One Go binary and a SQLite store, on your machine.</h2>
     </div>
     <div class="prose">
-      <p><code>brigada init</code> starts the engine and a detached runner; <code>brigada start</code> brings them back after a reboot. Tasks keep running after the conversation ends, and the plan is also written into the repo, so a foreman session can end or crash without losing work.</p>
+      <p><code>brigada init</code> starts the engine and a detached runner; <code>brigada start</code> brings them back after a reboot. Tasks keep running after the conversation ends, and the plan is mirrored to your remote’s <code>brigada/plans</code> branch, so a foreman session can end or crash without losing work.</p>
       <div class="notice" role="note">
         <span class="label">Before you start</span>
-        <p>Workers run in git worktrees, not containers, each under its CLI’s own permission scope. They inherit your environment, so a check or a test run can still reach your credentials and network: don’t point brigada at a repository you don’t trust.</p>
+        <p>Workers run in git worktrees, not containers, under your own harness’s permissions, which brigada passes through per agent, reviews included; Claude runs <code>bypassPermissions</code> unless you set another mode. They inherit your environment minus a credential scrub, so a check, a test run or a worker whose harness grants a shell can still reach your credentials and network: don’t point brigada at a repository you don’t trust.</p>
       </div>
     </div>
   </div>
@@ -247,7 +247,7 @@
         <a href="https://github.com/Blackfire-AI/brigada/blob/main/docs/TERMS.md">Terms</a>
       </nav>
     </div>
-    <p class="fine">“Blackfire AI”, “brigada” and the flame mark are trademarks of Blackfire AI. Claude Code, Codex, Kimi, opencode and Qwen Code are the marks of their owners; brigada drives their official CLIs and is not affiliated with or endorsed by them.</p>
+    <p class="fine">“Blackfire AI”, “brigada” and the flame mark are trademarks of Blackfire AI. Claude Code, Codex, Kimi, opencode, DeepSeek and Qwen Code are the marks of their owners; brigada drives their official CLIs and is not affiliated with or endorsed by them.</p>
   </div>
 </footer>
 
